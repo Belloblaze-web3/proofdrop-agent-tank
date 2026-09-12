@@ -1,0 +1,4 @@
+mujoco==3.3.6
+numpy>=2.0,<3
+# Optional Intel Core Ultra optimization:
+# openvino>=2025.0

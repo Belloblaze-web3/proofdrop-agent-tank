@@ -1,0 +1,90 @@
+{
+  "benchmark": "so101-bimanual-dinner-table-v1",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "success_rate": 1.0,
+  "mean_score": 0.932221523413688,
+  "mean_steps": 19.7,
+  "episodes": [
+    {
+      "seed": 0,
+      "success": true,
+      "score": 0.9375078759235427,
+      "steps": 17,
+      "return": 13.656729755604374
+    },
+    {
+      "seed": 1,
+      "success": true,
+      "score": 0.9346577432929739,
+      "steps": 13,
+      "return": 11.054538253635055
+    },
+    {
+      "seed": 2,
+      "success": true,
+      "score": 0.9316027821824154,
+      "steps": 13,
+      "return": 11.166739132669914
+    },
+    {
+      "seed": 3,
+      "success": true,
+      "score": 0.9307538407169322,
+      "steps": 52,
+      "return": 46.48901827889367
+    },
+    {
+      "seed": 4,
+      "success": true,
+      "score": 0.9300404201365225,
+      "steps": 21,
+      "return": 18.149718960750864
+    },
+    {
+      "seed": 5,
+      "success": true,
+      "score": 0.9313069848147086,
+      "steps": 11,
+      "return": 9.2276104321342
+    },
+    {
+      "seed": 6,
+      "success": true,
+      "score": 0.9315621893938761,
+      "steps": 12,
+      "return": 10.180053512468143
+    },
+    {
+      "seed": 7,
+      "success": true,
+      "score": 0.931637606956523,
+      "steps": 33,
+      "return": 27.465635703854403
+    },
+    {
+      "seed": 8,
+      "success": true,
+      "score": 0.9318660273891233,
+      "steps": 12,
+      "return": 10.208518283034946
+    },
+    {
+      "seed": 9,
+      "success": true,
+      "score": 0.931279763330263,
+      "steps": 13,
+      "return": 11.752174213912141
+    }
+  ]
+}

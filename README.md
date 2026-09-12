@@ -144,3 +144,15 @@ Use `url` in the PR description or comment. Keep `key` if you want to call `dele
 ## Temporary Object Cleanup
 
 Signed URLs expire automatically, but the underlying object remains in storage until deleted or expired by a provider lifecycle rule. Configure cleanup for the `ASSET_KEY_PREFIX` prefix in your storage provider if you want automatic retention.
+
+## SO-101 Bimanual Hackathon Benchmark
+
+This repository also contains a self-contained MuJoCo benchmark for a two-arm SO-101-style dinner-table task. It includes seeded object randomization, a multimodal visual-language policy boundary, ten-seed robustness evaluation, optional OpenVINO export, and a captioned MP4 demo generator.
+
+```bash
+python3 -m pip install -r robotics/requirements.txt pillow
+python robotics/scripts/evaluate.py --seeds 10 --output artifacts/eval.json
+python robotics/scripts/capture_demo.py --output artifacts/so101_bimanual_demo.mp4
+```
+
+Read [`docs/HACKATHON_SUBMISSION.md`](docs/HACKATHON_SUBMISSION.md) for the rubric evidence map, reproducibility instructions, OpenVINO protocol, and submission checklist.
