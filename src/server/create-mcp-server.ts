@@ -1,6 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SERVER_NAME, SERVER_VERSION } from "../constants/server.js";
 import { registerAssetTools } from "../tools/asset-tools.js";
+import { registerGovernanceTools } from "../tools/governance-tools.js";
 
 export function createMcpServer(): McpServer {
   const server = new McpServer({
@@ -9,6 +10,7 @@ export function createMcpServer(): McpServer {
   });
 
   registerAssetTools(server);
+  registerGovernanceTools(server);
 
   return server;
 }

@@ -46,11 +46,11 @@ describe("HTTP MCP server e2e", () => {
     await rm(root, { recursive: true, force: true });
   });
 
-  it("lists asset tools and uploads/deletes an asset over MCP HTTP", async () => {
+  it("lists governance and asset tools and uploads/deletes an asset over MCP HTTP", async () => {
     const tools = await client.listTools();
     assert.deepEqual(
       tools.tools.map((tool) => tool.name).sort(),
-      ["delete_asset", "upload_asset"],
+      ["delete_asset", "evaluate_task_airdrop", "score_open_grant", "simulate_investment_dao", "upload_asset"],
     );
 
     const uploadResult = await client.callTool({
@@ -151,7 +151,7 @@ describe("HTTP server edge e2e", () => {
       requestInit: { headers: { authorization: "Bearer secret-key" } },
     });
     await bearerClient.connect(bearerTransport);
-    assert.equal((await bearerClient.listTools()).tools.length, 2);
+    assert.equal((await bearerClient.listTools()).tools.length, 5);
     await bearerClient.close();
 
     const apiKeyClient = new Client({ name: "proofdrop-api-key-e2e", version: "1.0.0" }, { capabilities: {} });
@@ -159,7 +159,7 @@ describe("HTTP server edge e2e", () => {
       requestInit: { headers: { "x-api-key": "secret-key" } },
     });
     await apiKeyClient.connect(apiKeyTransport);
-    assert.equal((await apiKeyClient.listTools()).tools.length, 2);
+    assert.equal((await apiKeyClient.listTools()).tools.length, 5);
     await apiKeyClient.close();
   });
 });

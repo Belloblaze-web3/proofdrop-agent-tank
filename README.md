@@ -156,3 +156,7 @@ python robotics/scripts/capture_demo.py --output artifacts/so101_bimanual_demo.m
 ```
 
 Read [`docs/HACKATHON_SUBMISSION.md`](docs/HACKATHON_SUBMISSION.md) for the rubric evidence map, reproducibility instructions, OpenVINO protocol, and submission checklist.
+
+## Governance Concepts Prototype
+
+Proofdrop also includes simulation-first MCP tools for intelligent task airdrops, grants scored against public criteria, and investment DAO proposals. These tools return auditable scores and proposed plans only; they never transfer tokens, disburse funds, access wallets, or submit transactions. See [`docs/GOVERNANCE_CONCEPTS.md`](docs/GOVERNANCE_CONCEPTS.md) for the model, safety boundaries, and production roadmap.
