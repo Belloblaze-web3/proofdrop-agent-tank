@@ -80,3 +80,32 @@ For a fair comparison, report the same ten seeds, the same frame size, and the s
 | Reproduction | This document and `robotics/requirements.txt` |
 | Optimization | OpenVINO model and latency table measured on Intel Core Ultra, if available |
 | Technical explanation | The narrative above plus a short live walkthrough of `env.py`, `policy.py`, and the evaluator |
+
+## Agent Tank readiness addendum
+
+The Agent Tank announcement requires more than a passing local test suite. The project must be deployed to the Studio Next / Studio-dev preview and the demo video is mandatory, even if the shared Portal form currently labels that field optional.
+
+### GenLayer contract path
+
+The Agent Tank governance implementation is backed by [`contracts/proofdrop_governance.py`](../contracts/proofdrop_governance.py). The contract fetches a public evidence page inside a strict-equivalence block, asks validators to judge the evidence against a task claim, and persists the agreed score and eligibility decision only after consensus. It maintains meaningful state through `evaluation_count`, the last judgment, and indexed task results.
+
+Target network:
+
+```text
+RPC alias:      https://studio-next.genlayer.com/api
+Canonical RPC:  https://studio-dev.genlayer.com/api
+Chain ID:       61997
+Explorer:       https://explorer-studio-dev.genlayer.com/
+```
+
+Follow [`contracts/README.md`](../contracts/README.md) to deploy, call `get_policy`, submit one `evaluate_task_evidence` transaction, and verify the finalized result with `get_last_evaluation` and `get_task_evaluation`. Record the final contract address and transaction ID only after the explorer confirms successful execution.
+
+### Final Portal requirements
+
+- Select the **AI Governance** track.
+- Use the public GitHub repository and live website.
+- Include a specific published YouTube demo URL; a channel URL is not sufficient.
+- Include the verified Studio-dev explorer address after deployment.
+- Explain why decentralized judgment matters: validators independently assess public evidence, and state changes occur only after consensus.
+- Explain what is beyond boilerplate: the governance policy, consensus-backed evidence evaluation, persistent audit state, MCP tools, and reproducible SO-101 evidence.
+- Keep the proposal-only safety boundary explicit. The current build does not custody funds or submit settlement transactions.

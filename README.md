@@ -160,3 +160,17 @@ Read [`docs/HACKATHON_SUBMISSION.md`](docs/HACKATHON_SUBMISSION.md) for the rubr
 ## Governance Concepts Prototype
 
 Proofdrop also includes simulation-first MCP tools for intelligent task airdrops, grants scored against public criteria, and investment DAO proposals. These tools return auditable scores and proposed plans only; they never transfer tokens, disburse funds, access wallets, or submit transactions. See [`docs/GOVERNANCE_CONCEPTS.md`](docs/GOVERNANCE_CONCEPTS.md) for the model, safety boundaries, and production roadmap.
+
+## GenLayer Intelligent Contract
+
+The repository now includes a real GenLayer Intelligent Contract at [`contracts/proofdrop_governance.py`](contracts/proofdrop_governance.py). It evaluates a public task-evidence URL through validator consensus, stores the agreed score and eligibility result, and exposes read-only methods for the frontend and reviewers. State changes happen only after the consensus-backed judgment returns.
+
+The contract is intentionally proposal-only: it does not transfer tokens, access wallets, disburse grants, or execute investment trades. Deploy and verify it on Studio Next / Studio-dev using the instructions in [`contracts/README.md`](contracts/README.md). The target preview network is chain ID `61997`; do not claim a contract address until the deployment transaction is finalized and visible in the Studio-dev explorer.
+
+```bash
+genlayer network set studio-dev
+genlayer network info
+genlayer deploy --contract contracts/proofdrop_governance.py
+```
+
+After deployment, verify `get_policy`, submit one `evaluate_task_evidence` transaction, and read back `get_last_evaluation` and `get_task_evaluation`. The contract deployment and verification path is required for Agent Tank acceptance; the demo video is also mandatory even if the Portal form labels the field optional.

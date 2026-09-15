@@ -19,9 +19,15 @@
   </div>
   <h2>How it works</h2>
   <p><strong>Intelligent airdrop:</strong> completed tasks are scored by public completion, quality, and speed criteria. <strong>Open grants:</strong> proposals are evaluated by impact, feasibility, openness, and community benefit. <strong>Investment DAO:</strong> paper proposals are checked for quorum, majority, risk, and concentration limits.</p>
+  <div class="grid">
+    <section class="card"><div class="tag">Studio Next / 61997</div><h3>Consensus-backed evidence</h3><p>The GenLayer contract fetches a public evidence page, asks validators to judge it against a task claim, and writes the agreed score only after consensus.</p><p><a href="https://studio-next.genlayer.com/">Open Studio Next ↗</a> <a href="https://explorer-studio-dev.genlayer.com/">Open explorer ↗</a></p></section>
+    <section class="card"><div class="tag">Mandatory demo evidence</div><h3>See the proof</h3><p>The repository includes a generated SO-101 benchmark video and ten-seed JSON evaluation. The Agent Tank submission should use a specific published YouTube watch URL once uploaded.</p><p><a href="https://github.com/Belloblaze-web3/proofdrop-agent-tank/blob/main/artifacts/so101_bimanual_demo.mp4">Open demo artifact ↗</a></p></section>
+  </div>
+  <h2>Verify the contract path</h2>
+  <p>Deploy <code>contracts/proofdrop_governance.py</code> to Studio Next, call <code>get_policy</code>, submit one <code>evaluate_task_evidence</code> transaction, then read <code>get_last_evaluation</code>. The contract is proposal-only: no wallets, token transfers, or settlement transactions are performed.</p>
   <h2>Reproduce the proof</h2>
   <p><code>pnpm install && pnpm run typecheck && pnpm test</code></p>
   <p>The repository includes a ten-seed evaluation JSON, a MuJoCo demo video, MCP tools, and a full governance design note.</p>
-  <p class="links"><a href="https://github.com/Belloblaze-web3/proofdrop-agent-tank">GitHub repository</a><a href="https://github.com/mezotv/proofdrop/pull/3">Upstream PR</a></p>
+  <p class="links"><a href="https://github.com/Belloblaze-web3/proofdrop-agent-tank">GitHub repository</a><a href="https://github.com/Belloblaze-web3/proofdrop-agent-tank/blob/main/contracts/README.md">Contract deployment guide</a><a href="https://github.com/mezotv/proofdrop/pull/3">Upstream PR</a></p>
 </body>
 </html>
